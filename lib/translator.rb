@@ -20,8 +20,17 @@ else
 end
 end
 
-def get_english_meaning(file_path, emoticon)
-  emoticons = load_library(file_path)
-  emoji = emoticons.find {|name, faces| faces[1] == emoticon }
-  emoji == nil ? "Sorry, that emoticon was not found" : emoji[0]
+def get_english(file_path, emoticon)
+emoticons = load_library(file_path)
+name = nil
+  emoticons.each do |names, emojis|
+    if emoticon == emojis[1]
+      name = names
+    end
+  end
+if name == nil
+  "Sorry, that emoticon was not found"
+else 
+  name
+end
 end
