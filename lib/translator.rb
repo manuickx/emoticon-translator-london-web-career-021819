@@ -20,7 +20,7 @@ else
 end
 end
 
-def get_english(file_path, emoticon)
+def get_english_meaning(file_path, emoticon)
 emoticons = load_library(file_path)
 name = nil
   emoticons.each do |names, emojis|
